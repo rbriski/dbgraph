@@ -27,21 +27,6 @@ build {
     source="scripts/neo4j.conf"
     destination="/etc/neo4j/neo4j.conf"
   }
-  # provisioner "file" {
-  #   source="scripts/force.service"
-  #   destination="/etc/systemd/system/force.service"
-  # }
-  # provisioner "file" {
-  #   source="scripts/nginx.conf"
-  #   destination="/etc/nginx/nginx.conf"
-  # }
-  # provisioner "file" {
-  #   source="scripts/environment"
-  #   destination="/etc/environment"
-  # }
-  # provisioner "shell" {
-  #   script = "scripts/get_code.sh"
-  # }
   provisioner "shell" {
     environment_vars = [
       "NEO4J_PASSWORD=${var.NEO4J_PASSWORD}"
