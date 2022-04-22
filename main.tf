@@ -76,26 +76,6 @@ resource "linode_firewall" "graphdb" {
   linodes = [linode_instance.graphdb.id]
 }
 
-# resource "dnsimple_domain" "force" {
-#   name = "deanzaforce.club"
-# }
-
-# resource "dnsimple_zone_record" "force_naked" {
-#   zone_name = dnsimple_domain.force.name
-#   name      = ""
-#   value     = linode_instance.force.ip_address
-#   type      = "A"
-#   ttl       = 3600
-# }
-
-# resource "dnsimple_zone_record" "force_www" {
-#   zone_name = dnsimple_domain.force.name
-#   name      = "www"
-#   value     = dnsimple_zone_record.force_naked.zone_name
-#   type      = "CNAME"
-#   ttl       = 3600
-# }
-
 output "instance_ip_addr" {
   value = linode_instance.graphdb.ip_address
 }
